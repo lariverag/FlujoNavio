@@ -1,0 +1,32 @@
+<h6>Peliculas</h6>
+
+    <div class="container-fluid">
+        <div class="row mb-3">
+    @foreach (var movie in Movies)
+    {
+        <div class="col md-4">
+           <div class="card-deck mb-3" style = "width: 18rem;">
+                     <div class="card">
+                         <img src="@movie.MovieImage" class="card-img-top" alt="Card image cap" width="30" height="400">
+                        <div class="card-body">
+                        <h4 class="card-title"><em>@movie.MovieName</em></h4>
+                        <small class="text-muted">
+                         @movie.MovieGender
+                         <br>
+                         @movie.MovieSynopsis
+                         <br>
+                         @movie.CurrentDate
+                        </small>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            
+        }
+      </div>  
+</div>   
+
+@code{
+    [Parameter] public  List<Movie>Movies{get;set;}
+
+}

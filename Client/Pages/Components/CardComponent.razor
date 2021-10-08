@@ -1,0 +1,55 @@
+<div class="jumbotron">
+    @if (Movies ==null){
+        <label><small class="text-muted"></small></label>
+        <img src="/Images/loading.gif" class="rounded mx-auto d-block">
+    }else if (Movies.Count ==0){
+        <label><small class="text-muted">No se encontraron registros</small></label>
+        }else{
+     <h6>Peliculas</h6>
+    <div class="container-fluid">
+        <div class="row mb-3">
+    @foreach (var movie in Movies)
+    {<div class="card-deck mb-3" style = "width: 18rem;">
+        <div class="col md-4">
+        <div class="card">
+            <img class="card-img-top " src="@movie.MovieImage" alt="Card image cap" width="30" height="400" >
+            <div class="card-body">
+                <h2 class="card-title"><em>@movie.MovieName</em></h2>
+                <small class="text-muted">
+                    @movie.MovieGender
+                    <br>
+                    @movie.MovieSynopsis
+                    <br>
+                    @movie.CurrentDate
+                    </small>
+                    </div>
+            </div>
+            </div>
+             </div>
+    }
+</div>
+    </div>   
+    }
+</div>
+
+@code {
+    public List<Movie> Movies;
+    private List<Movie>GetMovies()
+        {
+            return new List<Movie>()
+            {
+                new Movie(){ MovieName = "Kin",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Kin.PNG", CurrentDate= new DateTime(2021,10,10) },
+                new Movie(){ MovieName = "Lamb",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Lamb.PNG", CurrentDate= new DateTime(2021,10,08)},
+                new Movie(){ MovieName = "Mass",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/mass.PNG", CurrentDate= new DateTime(2021,11,05)}, 
+                new Movie(){ MovieName = "Titane",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Titane.PNG", CurrentDate= new DateTime(2021,10,16)},
+                new Movie(){ MovieName = "Halloween Kills",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Halloween kills.PNG", CurrentDate= new DateTime(2021,11,01)}, 
+                new Movie(){ MovieName = "The Velvet",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Thevelvet.PNG", CurrentDate= new DateTime(2021,10,18)},  
+                new Movie(){ MovieName = "Venom",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Venom.PNG", CurrentDate= new DateTime(2021,11,23)},};
+
+            }
+
+            protected override async Task OnInitializedAsync(){
+                await Task.Delay(2000);
+                Movies = GetMovies();
+            }
+        }

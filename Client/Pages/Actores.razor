@@ -1,0 +1,12 @@
+@page "/Actores"
+@using ProjectMovies.Client.Pages.Components
+@inject IServicePerson Actor
+<PersonServiceComponent Actors ="Actors"></PersonServiceComponent>
+
+@code{
+    private List<Actor>Actors;
+    protected override void OnInitialized(){
+        Actors = Actor.GetActors();
+    }
+    
+}

@@ -1,0 +1,15 @@
+@page "/categories/create"
+@using ProjectMovies.Client.Pages.Components
+
+<h4> Crear categoria de peliculas</h4>
+
+
+<FormCategory Category = "Category" OnValidSubmit="Create"></FormCategory>
+
+@code{
+    private Category Category =new Category();
+    
+    private void Create(){
+        Console.WriteLine($"Creando la categoria: {Category.CategoryType}");
+    }
+}

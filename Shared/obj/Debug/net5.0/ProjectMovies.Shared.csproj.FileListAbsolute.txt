@@ -1,0 +1,12 @@
+C:\ProysCicloIII\SprintIII\ProjectMovies\Shared\bin\Debug\net5.0\ProjectMovies.Shared.deps.json
+C:\ProysCicloIII\SprintIII\ProjectMovies\Shared\bin\Debug\net5.0\ProjectMovies.Shared.dll
+C:\ProysCicloIII\SprintIII\ProjectMovies\Shared\bin\Debug\net5.0\ref\ProjectMovies.Shared.dll
+C:\ProysCicloIII\SprintIII\ProjectMovies\Shared\bin\Debug\net5.0\ProjectMovies.Shared.pdb
+C:\ProysCicloIII\SprintIII\ProjectMovies\Shared\obj\Debug\net5.0\ProjectMovies.Shared.csproj.AssemblyReference.cache
+C:\ProysCicloIII\SprintIII\ProjectMovies\Shared\obj\Debug\net5.0\ProjectMovies.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProysCicloIII\SprintIII\ProjectMovies\Shared\obj\Debug\net5.0\ProjectMovies.Shared.AssemblyInfoInputs.cache
+C:\ProysCicloIII\SprintIII\ProjectMovies\Shared\obj\Debug\net5.0\ProjectMovies.Shared.AssemblyInfo.cs
+C:\ProysCicloIII\SprintIII\ProjectMovies\Shared\obj\Debug\net5.0\ProjectMovies.Shared.csproj.CoreCompileInputs.cache
+C:\ProysCicloIII\SprintIII\ProjectMovies\Shared\obj\Debug\net5.0\ProjectMovies.Shared.dll
+C:\ProysCicloIII\SprintIII\ProjectMovies\Shared\obj\Debug\net5.0\ref\ProjectMovies.Shared.dll
+C:\ProysCicloIII\SprintIII\ProjectMovies\Shared\obj\Debug\net5.0\ProjectMovies.Shared.pdb

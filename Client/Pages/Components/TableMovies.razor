@@ -1,0 +1,12 @@
+@page "/datatable"
+@using ProjectMovies.Client.Pages.Components
+@inject ISeviceMovie movie
+
+<DataTableComponent Movies ="Movies"></DataTableComponent>
+
+@code{
+    private List<Movie>Movies;
+    protected override void OnInitialized(){
+        Movies = movie.GetMovies();
+    }
+}

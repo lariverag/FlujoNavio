@@ -1,0 +1,21 @@
+@page "/categories/edit/{CategoryId:int}"
+@using ProjectMovies.Client.Pages.Components
+<h3>Editar genero de pelicula </h3>
+
+<FormCategory Category = "Category" OnValidSubmit="Edit"></FormCategory>
+@code{
+
+    [Parameter] public int CategoryId{get;set;}
+    private Category Category;
+
+    protected override void OnInitialized(){
+        Category = new Category(){
+            CategoryId= CategoryId,
+            CategoryType = "Ciencia ficción"
+        };
+    }
+    
+    private void Edit(){
+        Console.WriteLine($"Actualizando la categoría Id {Category.CategoryId} nombre {Category.CategoryType}");
+    }
+}

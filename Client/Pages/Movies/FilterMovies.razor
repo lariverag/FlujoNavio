@@ -1,0 +1,88 @@
+@page "/movies/filter"
+@using ProjectMovies.Client.Pages.Components
+@inject ISeviceMovie movie
+<div class="container">
+    <div class="jumbotron">
+    @* Campo en el cual el usuario ingresa el nombre o texto a buscar en la lista de objetos de la interfaz o servicio
+    *@
+    <div class="form-group mb-3">
+        <input type="text" @bind-Value="movie_name" @bind-Value:event="oninput"
+            @onkeypress="@((KeyboardEventArgs e)=>MovieSearch(e))" class="form-control" id="movie_name"
+            placeholder="Buscar pelicula" />
+    </div>
+    @* Lista desplegable con todas las categorías disponibles *@
+    <div class="form-group mb-3">
+        <select class="form-control" @bind="categorySelected">
+            <option value="0">Selecciona una categoría</option>
+            @foreach (var item in categories)
+            {
+                <option value="@item.CategoryId">@item.CategoryType</option>
+            }
+        </select>
+    </div>
+
+    @* Opciones de categorías de consulta de peliculas en chackbox *@
+    <div class="form-inline">
+        <div class="form-group mx-sm-3 mb-3">
+            <input type="checkbox" class="form-check-input" id="estrenos" @bind="futurosEstrenos">
+            <label class="form-check-label" for="estrenos">Próximos estrenos</label>
+        </div>
+
+        <div class="form-group mx-sm-3 mb-3">
+            <input type="checkbox" class="form-check-input" id="cartelera" @bind="enCartelera">
+            <label class="form-check-label" for="cartelera">En cartelera</label>
+        </div>
+
+        <div class="form-group mx-sm-3 mb-3">
+            <input type="checkbox" class="form-check-input" id="mejora_calificada" @bind="mejorCalificada">
+            <label class="form-check-label" for="mejora_calificada">Mejor calificadas</label>
+        </div>
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-primary mb-2 mx-sm-3" @onclick="ShowMovies">Buscar</button>
+        <button type="button" class="btn btn-danger mb-2 mx-sm-3" @onclick="ClearInputs">Limpiar campos</button>
+    </div>
+</div>
+<ServiceComponent Movies="Movies"></ServiceComponent>
+</div>
+
+@code {
+    private List<Movie> Movies;
+    private List<Category> categories = new List<Category>();
+    string movie_name = "";
+    string categorySelected = "";
+    private bool futurosEstrenos = false;
+    private bool enCartelera = false;
+    private bool mejorCalificada = false;
+
+    protected override void OnInitialized()
+    {
+        Movies = movie.GetMovies();
+    }
+
+    private void ShowMovies()
+    {
+        Movies = movie.GetMovies().Where(x=>x.MovieName.ToLower().Contains(movie_name.ToLower())).ToList();
+        Console.WriteLine($"Pelicula: {movie_name}, categoría seleccionada {categorySelected}");
+        Console.WriteLine($"Próximos estrenos {futurosEstrenos}, en cartelera: {enCartelera} mejor calificada {mejorCalificada}");
+    }
+
+private void ClearInputs(){
+    Movies = movie.GetMovies();
+    movie_name = "";
+    categorySelected = "0";
+    futurosEstrenos = false;
+    enCartelera = false;
+    mejorCalificada = false;
+}
+
+    private void MovieSearch(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            ShowMovies();
+        }
+    }
+
+}

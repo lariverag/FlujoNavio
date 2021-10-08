@@ -1,0 +1,12 @@
+﻿@page "/fetchdata"
+@using ProjectMovies.Client.Pages.Components
+@inject ISeviceMovie movie
+<ServiceComponent Movies ="Movies"></ServiceComponent>
+
+@code{
+    private List<Movie>Movies;
+    protected override void OnInitialized(){
+        Movies = movie.GetMovies();
+    }
+    
+}
