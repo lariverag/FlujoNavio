@@ -112,7 +112,7 @@ using ProjectMovies.Client.Pages.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 7 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Components\TableMovies.razor"
+#line 11 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Components\TableMovies.razor"
       
     private List<Movie>Movies;
     protected override void OnInitialized(){

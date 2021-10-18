@@ -4,16 +4,18 @@
         <EditForm Model="Actor" OnValidSubmit="OnValidSubmit">
             <DataAnnotationsValidator></DataAnnotationsValidator>
             <div class="mb-3">
-                <InputText class="form-control" @bind-Value="@Actor.Name" placeholder="Actor"></InputText>
+                <InputText class="form-control" @bind-Value="@Actor.Name" placeholder="Nombre del actor"></InputText>
                 <ValidationMessage For="@(()=>Actor.Name)"></ValidationMessage>
             </div>
             <div class="form-group row mb-3">
                 <div class="col-sm-8">
+                    <label>Fecha de nacimiento</label>
                     <InputDate class="form-control" @bind-Value="@Actor.BirthDate"></InputDate>
                     <ValidationMessage For="@(()=>Actor.BirthDate)"></ValidationMessage>
                 </div>
 
                 <div class="col-sm-4">
+                    <label>Numero de Creditos</label>
                     <InputNumber class="form-control" @bind-Value="@Actor.KnowCredits" placeholder="Cantidad de créditos">
                     </InputNumber>
                     <ValidationMessage For="@(()=>Actor.KnowCredits)"></ValidationMessage>
@@ -21,7 +23,8 @@
             </div>
 
             <div class="form-group">
-                <ImageComponent Label="photo" ImageSelected="ImageSelected" ImageURL="@imageURL"></ImageComponent>
+                <label>Fotografia del actor</label>
+                <ImageComponent Label="" ImageSelected="ImageSelected" ImageURL="@imageURL"></ImageComponent>
             </div>
             <div class="form-group"></div>
             <button class="btn btn-success">Guardar</button>

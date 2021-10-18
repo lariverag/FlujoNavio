@@ -103,7 +103,7 @@ using ProjectMovies.Client.Pages.Components;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/categories/edit/{CategoryId:int}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/categories/edit/{Id:int}")]
     public partial class EditCategory : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -115,18 +115,18 @@ using ProjectMovies.Client.Pages.Components;
 #line 6 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Categories\EditCategory.razor"
       
 
-    [Parameter] public int CategoryId{get;set;}
+    [Parameter] public int Id{get;set;}
     private Category Category;
 
     protected override void OnInitialized(){
         Category = new Category(){
-            CategoryId= CategoryId,
+            Id= Id,
             CategoryType = "Ciencia ficción"
         };
     }
     
     private void Edit(){
-        Console.WriteLine($"Actualizando la categoría Id {Category.CategoryId} nombre {Category.CategoryType}");
+        Console.WriteLine($"Actualizando la categoría Id {Category.Id} nombre {Category.CategoryType}");
     }
 
 #line default

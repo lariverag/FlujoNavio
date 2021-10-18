@@ -1,5 +1,8 @@
 @page "/categories/create"
 @using ProjectMovies.Client.Pages.Components
+@inject ISeviceMovie movie
+@inject IErrorMessage showMessage
+@inject NavigationManager navigationManager
 
 <h4> Crear categoria de peliculas</h4>
 
@@ -9,7 +12,14 @@
 @code{
     private Category Category =new Category();
     
-    private void Create(){
-        Console.WriteLine($"Creando la categoria: {Category.CategoryType}");
+    private async Task Create(){
+        var httpResponse = await movie.Post("api/categories", Category);
+        if(httpResponse.Error){
+           var body = await httpResponse.GetBody();
+            await showMessage.ShowErrorMessage(body);
+        }else{
+            navigationManager.NavigateTo("/categories");
+        }
+        Console.WriteLine($"Creando la categoría {Category.CategoryType}");
     }
 }

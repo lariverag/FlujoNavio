@@ -96,7 +96,14 @@ using ProjectMovies.Client.Services;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/movies/edit/{MovieId:int}")]
+#nullable restore
+#line 2 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Movies\EditMovie.razor"
+using ProjectMovies.Client.Pages.Components;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/movies/edit/{Id:int}")]
     public partial class EditMovie : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -105,9 +112,28 @@ using ProjectMovies.Client.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 4 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Movies\EditMovie.razor"
-      
-    [Parameter] public int MovieId{get;set;}
+#line 5 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Movies\EditMovie.razor"
+       
+    [Parameter] public int Id { get; set; }
+    private Movie Movie;
+    protected override void OnInitialized()
+    {
+        Movie = new Movie()
+        {
+            MovieName = "El juego del calamar",
+            EnCartelera = true,
+            MovieSynopsis = "Sinopsis...",
+            Trailer = "Trailer"
+        };
+    }
+    void Edit()
+    {
+        Console.WriteLine($"Pelicula: {Movie.MovieName}");
+        Console.WriteLine($"Premier: {Movie.Premier}");
+        Console.WriteLine($"Esta en cartelera: {Movie.EnCartelera}");
+        Console.WriteLine($"Poster: {Movie.MovieImage}");
+        Console.WriteLine($"Sinopsis: {Movie.MovieSynopsis}");
+    }
 
 #line default
 #line hidden

@@ -96,6 +96,13 @@ using ProjectMovies.Client.Services;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Movies\CreateMovie.razor"
+using ProjectMovies.Client.Pages.Components;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/movies/create")]
     public partial class CreateMovie : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -106,12 +113,39 @@ using ProjectMovies.Client.Services;
         #pragma warning restore 1998
 #nullable restore
 #line 6 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Movies\CreateMovie.razor"
-      
-    void Create(){
+       
+    private Movie Movie = new Movie();
+    private List<Category> CategoriasNoSeleccionadas = new List<Category>();
+
+    protected override void OnInitialized()
+    {
+        CategoriasNoSeleccionadas = new List<Category>(){
+        new Category(){Id = 1, CategoryType="Comedia"},
+        new Category(){Id = 2, CategoryType="Terror"},
+        new Category(){Id = 3, CategoryType="Ciencia Ficción"},
+        new Category(){Id = 4, CategoryType="Documentales"},
+        new Category(){Id = 5, CategoryType="Comedia"}
+};
+    }
+    void Create()
+    {
+        
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 22 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Movies\CreateMovie.razor"
+                                                                                                        
         Console.WriteLine(navigationManager.Uri);
         navigationManager.NavigateTo("movie");
-    }
+        Console.WriteLine($"Pelicula: {Movie.MovieName}");
+        Console.WriteLine($"Premier: {Movie.Premier}");
+        Console.WriteLine($"Esta en cartelera: {Movie.EnCartelera}");
+        Console.WriteLine($"Poster: {Movie.MovieImage}");
+        Console.WriteLine($"Sinopsis: {Movie.MovieSynopsis}");
 
+    }
 
 #line default
 #line hidden

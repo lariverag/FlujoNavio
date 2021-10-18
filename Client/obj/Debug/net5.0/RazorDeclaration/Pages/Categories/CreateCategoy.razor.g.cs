@@ -112,17 +112,27 @@ using ProjectMovies.Client.Pages.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 9 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Categories\CreateCategoy.razor"
+#line 12 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Categories\CreateCategoy.razor"
       
     private Category Category =new Category();
     
-    private void Create(){
-        Console.WriteLine($"Creando la categoria: {Category.CategoryType}");
+    private async Task Create(){
+        var httpResponse = await movie.Post("api/categories", Category);
+        if(httpResponse.Error){
+           var body = await httpResponse.GetBody();
+            await showMessage.ShowErrorMessage(body);
+        }else{
+            navigationManager.NavigateTo("/categories");
+        }
+        Console.WriteLine($"Creando la categoría {Category.CategoryType}");
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IErrorMessage showMessage { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISeviceMovie movie { get; set; }
     }
 }
 #pragma warning restore 1591

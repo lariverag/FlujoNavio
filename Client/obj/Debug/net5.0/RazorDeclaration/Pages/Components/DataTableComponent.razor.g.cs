@@ -104,7 +104,7 @@ using ProjectMovies.Client.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 36 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Components\DataTableComponent.razor"
+#line 34 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Components\DataTableComponent.razor"
       
     [Parameter] public  List<Movie>Movies{get;set;}
 

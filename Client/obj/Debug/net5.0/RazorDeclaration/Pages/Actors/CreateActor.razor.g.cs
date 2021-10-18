@@ -115,7 +115,7 @@ using ProjectMovies.Client.Pages.Components;
 #line 6 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Actors\CreateActor.razor"
       
     private Actor Actor = new Actor();
-    void Create(){
+    async Task Create(){
         Console.WriteLine($"Actor {Actor.Name}");
         Console.WriteLine($"Fecha de nacimiento{Actor.BirthDate}");
         Console.WriteLine($"Cantidad de créditos {Actor.KnowCredits}");

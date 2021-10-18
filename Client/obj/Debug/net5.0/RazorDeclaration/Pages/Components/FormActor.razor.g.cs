@@ -104,7 +104,7 @@ using ProjectMovies.Client.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 32 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Components\FormActor.razor"
+#line 35 "C:\ProysCicloIII\SprintIII\ProjectMovies\Client\Pages\Components\FormActor.razor"
        
     string imageURL;
     [Parameter] public Actor Actor { get; set; }

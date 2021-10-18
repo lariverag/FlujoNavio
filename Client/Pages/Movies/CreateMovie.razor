@@ -1,12 +1,32 @@
 @page "/movies/create"
 @inject NavigationManager navigationManager
+@using ProjectMovies.Client.Pages.Components
 
-<h3> Crear pelicula</h3>
-<button @onclick="Create">Aceptar</button>
-@code{
-    void Create(){
+<FormMovie Movie="Movie" OnValidSubmit="Create" CategoriasNoSeleccionadas="CategoriasNoSeleccionadas"></FormMovie>
+@code {
+    private Movie Movie = new Movie();
+    private List<Category> CategoriasNoSeleccionadas = new List<Category>();
+
+    protected override void OnInitialized()
+    {
+        CategoriasNoSeleccionadas = new List<Category>(){
+        new Category(){Id = 1, CategoryType="Comedia"},
+        new Category(){Id = 2, CategoryType="Terror"},
+        new Category(){Id = 3, CategoryType="Ciencia Ficción"},
+        new Category(){Id = 4, CategoryType="Documentales"},
+        new Category(){Id = 5, CategoryType="Comedia"}
+};
+    }
+    void Create()
+    {
+        @* Con el navigationManager vamos a redireccionar al usuario a otras rutas dentro del sistema *@
         Console.WriteLine(navigationManager.Uri);
         navigationManager.NavigateTo("movie");
-    }
+        Console.WriteLine($"Pelicula: {Movie.MovieName}");
+        Console.WriteLine($"Premier: {Movie.Premier}");
+        Console.WriteLine($"Esta en cartelera: {Movie.EnCartelera}");
+        Console.WriteLine($"Poster: {Movie.MovieImage}");
+        Console.WriteLine($"Sinopsis: {Movie.MovieSynopsis}");
 
+    }
 }

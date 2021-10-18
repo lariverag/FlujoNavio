@@ -27,8 +27,11 @@ namespace ProjectMovies.Client
             await builder.Build().RunAsync();
         }
         private static void ConfigureServices(IServiceCollection Services){
-            Services.AddSingleton<ISeviceMovie,ServiceMovie>();
-            Services.AddSingleton<IServicePerson,ServicePerson>();
+            Services.AddScoped<ISeviceMovie,ServiceMovie>();
+            Services.AddScoped<IServicePerson,ServicePerson>();
+            Services.AddScoped<IErrorMessage,ErrorMessage>();
+
+
         }
     }
 }

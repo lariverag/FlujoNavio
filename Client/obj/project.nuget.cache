@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/I4JRHj/Jd9rl3Ja8njHHMou2NVDM9ZdV28OwKESsGE0eYANChovw7koRe2S0vncusj+gZoBJaz9KNdHlDj0iA==",
+  "dgSpecHash": "AA9N/UYVdFx+6mnXM8kiYgw3K92hZHsC2pxqjS4+25E6LA6ADjjmAKwtAw5lr6dgfXOr01fBS95uK9jQXGArSA==",
   "success": true,
   "projectFilePath": "C:\\ProysCicloIII\\SprintIII\\ProjectMovies\\Client\\ProjectMovies.Client.csproj",
   "expectedPackageFiles": [
@@ -30,7 +30,7 @@
     "C:\\Users\\LORENA FAJARDO\\.nuget\\packages\\microsoft.jsinterop.webassembly\\5.0.10\\microsoft.jsinterop.webassembly.5.0.10.nupkg.sha512",
     "C:\\Users\\LORENA FAJARDO\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\LORENA FAJARDO\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
-    "C:\\Users\\LORENA FAJARDO\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.10\\microsoft.netcore.app.runtime.browser-wasm.5.0.10.nupkg.sha512"
+    "C:\\Users\\LORENA FAJARDO\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.11\\microsoft.netcore.app.runtime.browser-wasm.5.0.11.nupkg.sha512"
   ],
   "logs": []
 }

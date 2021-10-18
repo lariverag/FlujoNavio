@@ -1,0 +1,89 @@
+@page "/actors/filter"
+@using ProjectMovies.Client.Pages.Components
+@inject IServicePerson actor
+
+<div class="container">
+    <div class="jumbotron">
+    @* Nombre o texto a buscar en la lista de objetos de la interfaz o servicio
+    *@
+    <div class="form-group mb-3">
+        <input type="text" @bind-Value="actor_name" @bind-Value:event="oninput"
+            @onkeypress="@((KeyboardEventArgs e)=>ActorSearch(e))" class="form-control" id="actor_name"
+            placeholder="Buscar actor" />
+    </div>
+    @* Lista desplegable con todas las categorías disponibles *@
+    <div class="form-group mb-3">
+        <select class="form-control" @bind="categorySelected">
+            <option value="0">Selecciona una categoría</option>
+            @foreach (var item in categories)
+            {
+                <option value="@item.Id">@item.CategoryType</option>
+            }
+        </select>
+    </div>
+
+    @* Opciones de categorías de consulta de peliculas en chackbox *@
+    <div class="form-inline">
+        <div class="form-group mx-sm-3 mb-3">
+            <input type="checkbox" class="form-check-input" id="estrenos" @bind="futurosEstrenos">
+            <label class="form-check-label" for="estrenos">Próximos estrenos</label>
+        </div>
+
+        <div class="form-group mx-sm-3 mb-3">
+            <input type="checkbox" class="form-check-input" id="cartelera" @bind="enCartelera">
+            <label class="form-check-label" for="cartelera">En cartelera</label>
+        </div>
+
+        <div class="form-group mx-sm-3 mb-3">
+            <input type="checkbox" class="form-check-input" id="mejora_calificada" @bind="mejorCalificada">
+            <label class="form-check-label" for="mejora_calificada">Mejor calificadas</label>
+        </div>
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-primary mb-2 mx-sm-3" @onclick="ShowActors">Buscar</button>
+        <button type="button" class="btn btn-danger mb-2 mx-sm-3" @onclick="ClearInputs">Limpiar campos</button>
+    </div>
+</div>
+<PersonServiceComponent Actors="Actors"></PersonServiceComponent>
+</div>
+
+@code {
+    private List<Actor> Actors;
+    private List<Category> categories = new List<Category>();
+    string actor_name = "";
+    string categorySelected = "";
+    private bool futurosEstrenos = false;
+    private bool enCartelera = false;
+    private bool mejorCalificada = false;
+
+    protected override void OnInitialized()
+    {
+        Actors = actor.GetActors();
+    }
+
+    private void ShowActors()
+    {
+        Actors = actor.GetActors().Where(x=>x.Name.ToLower().Contains(actor_name.ToLower())).ToList();
+        Console.WriteLine($"Pelicula: {actor_name}, categoría seleccionada {categorySelected}");
+        Console.WriteLine($"Próximos estrenos {futurosEstrenos}, en cartelera: {enCartelera} mejor calificada {mejorCalificada}");
+    }
+
+private void ClearInputs(){
+    Actors = actor.GetActors();
+    actor_name = "";
+    categorySelected = "0";
+    futurosEstrenos = false;
+    enCartelera = false;
+    mejorCalificada = false;
+}
+
+    private void ActorSearch(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            ShowActors();
+        }
+    }
+
+}

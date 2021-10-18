@@ -111,13 +111,13 @@ using ProjectMovies.Client.Services;
         {
             return new List<Movie>()
             {
-                new Movie(){ MovieName = "Kin",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Kin.PNG", CurrentDate= new DateTime(2021,10,10) },
-                new Movie(){ MovieName = "Lamb",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Lamb.PNG", CurrentDate= new DateTime(2021,10,08)},
-                new Movie(){ MovieName = "Mass",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/mass.PNG", CurrentDate= new DateTime(2021,11,05)}, 
-                new Movie(){ MovieName = "Titane",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Titane.PNG", CurrentDate= new DateTime(2021,10,16)},
-                new Movie(){ MovieName = "Halloween Kills",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Halloween kills.PNG", CurrentDate= new DateTime(2021,11,01)}, 
-                new Movie(){ MovieName = "The Velvet",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Thevelvet.PNG", CurrentDate= new DateTime(2021,10,18)},  
-                new Movie(){ MovieName = "Venom",MovieGender = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Venom.PNG", CurrentDate= new DateTime(2021,11,23)},};
+                new Movie(){ MovieName = "Kin",MovieCategory = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Kin.PNG", Premier= new DateTime(2021,10,10) },
+                new Movie(){ MovieName = "Lamb",MovieCategory = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Lamb.PNG", Premier= new DateTime(2021,10,08)},
+                new Movie(){ MovieName = "Mass",MovieCategory = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/mass.PNG", Premier= new DateTime(2021,11,05)}, 
+                new Movie(){ MovieName = "Titane",MovieCategory = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Titane.PNG", Premier= new DateTime(2021,10,16)},
+                new Movie(){ MovieName = "Halloween Kills",MovieCategory = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Halloween kills.PNG", Premier= new DateTime(2021,11,01)}, 
+                new Movie(){ MovieName = "The Velvet",MovieCategory = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Thevelvet.PNG", Premier= new DateTime(2021,10,18)},  
+                new Movie(){ MovieName = "Venom",MovieCategory = "Genero de la pelicula ",MovieSynopsis = "Sinopsis de la pelicula",MovieImage = "/Images/Venom.PNG", Premier= new DateTime(2021,11,23)},};
 
             }
 

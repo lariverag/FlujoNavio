@@ -103,7 +103,7 @@ using ProjectMovies.Client.Pages.Components;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
